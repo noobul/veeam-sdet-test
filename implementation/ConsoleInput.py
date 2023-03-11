@@ -1,3 +1,5 @@
+print("Enter path usinng forward (ex: C:/testFolder)")
+
 source_prompt = "Enter source path: "
 source_path = input(source_prompt)
 print(source_path)
