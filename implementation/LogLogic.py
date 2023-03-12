@@ -8,7 +8,8 @@ class LogLogic:
         self.log_line = log_line
 
     def write_events_to_logfile(self):
-        file = open(self.log_path, "w")
+        self.make_folder_for_logs()
+        file = open("log.text", "w")
         file.write(self.log_line)
         file.close()
         print(self.log_line)
