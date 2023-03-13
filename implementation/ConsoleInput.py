@@ -6,7 +6,8 @@ active = True
 while active:
 
     prompt = ("\nWelcome to the test beackup utility.")
-    prompt += ("\nType: 'start', 'quit' or 'help' to either start the utilty, close it, or get documentation:")
+    prompt += ("\nPress Ctrl+C to close script.")
+    prompt += ("\nType 'start' or 'help' to either start the utilty, or get documentation:")
     prompt = input(prompt)
 
 
@@ -26,15 +27,12 @@ while active:
         
         folder_logic = fl.FolderLogic(source_path, replica_path, logfile_path)
         s = sl.SchedulerLogic(sync_interval, 'compare_folder_contents_and_update', folder_logic)
-
+        
         while active:
             s.sync()
 
-    if prompt == 'help':
+    elif prompt == 'help':
         print("Documentation placeholder.")
-
-    elif prompt == 'quit':
-        active = False
     
     else:
         print("Unknwon command.")
