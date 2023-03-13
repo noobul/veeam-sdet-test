@@ -25,7 +25,7 @@ while active:
         sync_interval = int(sync_interval)
         
         folder_logic = fl.FolderLogic(source_path, replica_path, logfile_path)
-        s = sl.SchedulerLogic(sync_interval, folder_logic.compare_folder_contents_and_update())
+        s = sl.SchedulerLogic(sync_interval, 'compare_folder_contents_and_update', folder_logic)
 
         while active:
             s.sync()
